@@ -1,2 +1,48 @@
-# Algorithm-of-Clustering-Geo-Referenced-Time-Series-Data
-This study proposes a geo-referenced time series clustering algorithm that integrates both temporal and spatial information to improve clustering performance on geo-referenced time series data.
+# 參照地理位置的時間序列分群演算法
+
+本專案為碩士論文之研究實作，  提出一套可同時整合「時間序列差異」與「空間距離」的分群流程。
+
+---
+
+## 研究目標
+
+建立一套可同時整合「時間序列差異」與「空間距離」的分群流程，
+使分群結果不僅反映時間趨勢相似性，
+亦能考量地理鄰近所帶來的空間結構。
+
+---
+
+## 方法架構
+
+本研究延伸 ClustGeo 概念，建立雙距離分群流程：
+
+1. 計算時間序列差異  
+   - Linear Predictive Coding (LPC)  
+   - Compression-based Dissimilarity Measure (CDM)
+2. 計算空間距離（行政區幾何中心）
+3. 將兩種距離進行正規化與加權整合
+4. 分別應用於：
+   - K-means
+   - K-medoids
+   - Hierarchical clustering
+5. 比較不同距離與分群方法之表現
+
+---
+
+## 實驗資料
+
+- 美國 25 州 1929–1999 個人收入資料
+- 州行政區空間邊界資料
+
+---
+
+## 主要發現
+
+- LPC 在三種分群方法下皆呈現穩定結果
+- CDM 在本資料上區辨能力較 LPC 低
+- 納入空間距離可提升分群結果之空間一致性
+- 綜合分群品質與空間一致性存在權衡關係
+
+---
+
+## 論文全文：[參照地理位置的時間序列分群演算法](https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=8NXgtW/record?r1=1&h1=1)
